@@ -5,13 +5,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Repository
 public interface HechiceroRepository extends JpaRepository<Hechicero, UUID> {
-    public List<Hechicero> getBySchool(String school);
-    public List<Hechicero> getByGrade(String grade);
-    public List<Hechicero> getByActive(Boolean status);
+    public List<Hechicero> findBySchool(String school);
+    public List<Hechicero> findByGrade(String grade);
+    public List<Hechicero> findByisActive(Boolean isActive);
 }
 

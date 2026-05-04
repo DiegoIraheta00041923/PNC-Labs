@@ -38,6 +38,7 @@ public class HechiceroServiceImplementation implements HechiceroService {
         existHechicero.get().setSchool(hechicero.getSchool());
         existHechicero.get().setCursedEnergy(hechicero.getCursedEnergy());
         existHechicero.get().setIsActive(hechicero.getIsActive());
+        hechiceroRepository.save(existHechicero.get());
 
     }
     @Override
@@ -49,14 +50,14 @@ public class HechiceroServiceImplementation implements HechiceroService {
 
     @Override
     public List<Hechicero> getHechicerosBySchool(String school){
-        return hechiceroRepository.getBySchool(school);
+        return hechiceroRepository.findBySchool(school);
     }
     @Override
     public List<Hechicero> getHechicerosByGrade(String grade){
-        return hechiceroRepository.getByGrade(grade);
+        return hechiceroRepository.findByGrade(grade);
     }
     @Override
-    public List<Hechicero> getActiveHechiceros(Boolean active){
-        return hechiceroRepository.getByActive(active);
+    public List<Hechicero> getActiveHechiceros(Boolean isActive){
+        return hechiceroRepository.findByisActive(isActive);
     }
 }
