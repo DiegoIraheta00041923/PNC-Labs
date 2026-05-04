@@ -9,7 +9,7 @@ public interface HechiceroService {
     void createHechicero(Hechicero hechicero);
     List<Hechicero> getHechiceros();
     Hechicero getHechiceroByID(UUID id);
-    void updateHechiero(Hechicero hechicero);
+    void updateHechiero(UUID id,Hechicero hechicero);
     Hechicero deleteHechicero(UUID id);
     List<Hechicero> getHechicerosBySchool(String school);
     List<Hechicero> getHechicerosByGrade(String grade);
