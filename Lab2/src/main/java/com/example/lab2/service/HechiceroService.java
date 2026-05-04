@@ -2,16 +2,16 @@ package com.example.lab2.service;
 
 import com.example.lab2.domain.entity.Hechicero;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface HechiceroService {
     void createHechicero(Hechicero hechicero);
-
-    void getHechiceros();
-    void getHechiceroByID(UUID id);
+    List<Hechicero> getHechiceros();
+    Hechicero getHechiceroByID(UUID id);
     void updateHechiero(Hechicero hechicero);
-    void deleteHechicero(UUID id);
-    void getHechicerosBySchool(String school);
-    void getHechicerosByGrade(String grade);
-    void getActiveHechiceros(Boolean active);
+    Hechicero deleteHechicero(UUID id);
+    List<Hechicero> getHechicerosBySchool(String school);
+    List<Hechicero> getHechicerosByGrade(String grade);
+    List<Hechicero> getActiveHechiceros(Boolean active);
 }
